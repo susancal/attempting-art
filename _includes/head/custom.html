@@ -1,13 +1,18 @@
 <!-- Security headers and meta tags -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self'; manifest-src 'self'; worker-src 'none'; object-src 'none';">
-<meta name="robots" content="noindex, nofollow">
-<meta name="googlebot" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube-nocookie.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; connect-src 'self' https://attempting.art; manifest-src 'self'; worker-src 'self'; object-src 'none';">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-<meta http-equiv="Referrer-Policy" content="no-referrer">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
 
-<!-- PWA support removed for privacy -->
+<!-- PWA support -->
+<meta name="theme-color" content="#635bff">
+<meta name="application-name" content="Attempting Art">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Art Journal">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/images/icon-192.png">
 
 <!-- Cache control for better performance -->
 <meta http-equiv="Cache-Control" content="max-age=86400, public">
@@ -23,4 +28,5 @@
 <!-- Font settings for better performance -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-<!-- Service worker removed for privacy -->
+<!-- Service worker registration for offline support -->
+<script src="/assets/js/sw-register.js" async></script>
