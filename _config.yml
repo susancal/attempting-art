@@ -20,11 +20,9 @@
 
 title: Attempting Art
 description: >- # this means to ignore newlines until "baseurl:"
-  A modern art journal for personal inspiration, creativity, and joy.
+  Private art journal
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://attempting.art" # the base hostname & protocol for your site
-domain: attempting.art
-enforce_ssl: attempting.art
+url: "" # intentionally blank for privacy
 locale: "en-US"
 # logo removed
 # logo: "/assets/images/logo.png"
@@ -88,8 +86,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-paginate
   - jekyll-remote-theme
-  - jekyll-seo-tag
-  - jekyll-sitemap
 
 # Include _pages directory for pages
 include:
