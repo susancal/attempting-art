@@ -20,16 +20,108 @@
 
 title: Attempting Art
 description: >- # this means to ignore newlines until "baseurl:"
-  SOB will be filling this out.
+  A modern art journal for personal inspiration, creativity, and joy.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://attempting.art" # the base hostname & protocol for your site
 domain: attempting.art
+enforce_ssl: attempting.art
+locale: "en-US"
+# logo removed
+# logo: "/assets/images/logo.png"
+masthead_title: "Attempting Art"
+subtitle: "...and other things"
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Author
+author:
+  name: "SOB"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "Art enthusiast exploring creativity and personal expression"
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Outputting
+permalink: /:categories/:title/
+
+# Pagination Settings
+paginate: 5
+paginate_path: "/art-journal/page:num/"
+
+# Advanced pagination (for local development)
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page:num/'
+  title: ':title - Page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+    before: 2
+    after: 2
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Include _pages directory for pages
+include:
+  - _pages
+
+# Optimization settings
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: development
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
+# Exclude development files from build
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CHANGELOG.md
+  - LICENSE
+  - "*.log"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

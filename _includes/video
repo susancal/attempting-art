@@ -1,0 +1,9 @@
+{% capture video_id %}{{ include.id }}{% endcapture %}
+{% capture video_provider %}{{ include.provider | default: "youtube" }}{% endcapture %}
+{% capture video_title %}{{ include.title | default: "Video" }}{% endcapture %}
+
+{% if video_provider == "youtube" %}
+  <div class="responsive-video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ video_id }}" frameborder="0" allowfullscreen title="{{ video_title }}"></iframe>
+  </div>
+{% endif %}

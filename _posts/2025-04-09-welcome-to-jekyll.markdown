@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Welcome to SOB's good site - stay tuned!"
 date:   2025-04-09 12:10:55 -0500
 categories: jekyll update
