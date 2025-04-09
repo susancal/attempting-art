@@ -1,0 +1,12 @@
+# robots.txt for attempting.art
+
+User-agent: *
+Allow: /
+
+Sitemap: https://attempting.art/sitemap.xml
+
+# Disallow default 404 page
+Disallow: /404.html
+
+# Disallow offline page
+Disallow: /offline.html
