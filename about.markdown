@@ -16,6 +16,13 @@ Welcome to my art journal! This site is my personal creative space where I docum
 
 I'm passionate about art that evokes joy, creativity, and a sense of wonder. My aesthetic embraces vibrant colors, interesting patterns, and contemporary design elements that reflect my personal artistic voice.
 
+### My Artistic Journey
+
+I created this space to:
+- Document my creative process
+- Build a visual diary of my art experiments
+- Share inspiration and ideas
+- Connect with fellow art enthusiasts
 
 ### About This Site
 
