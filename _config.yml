@@ -20,7 +20,7 @@
 
 title: Attempting Art
 description: >- # this means to ignore newlines until "baseurl:"
-  A modern journal for personal inspiration, creativity, and joy.
+  A journal for personal inspiration, creativity, and joy.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://attempting.art" # the base hostname & protocol for your site
 domain: attempting.art
@@ -37,9 +37,9 @@ minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark"
 
 # Site Author
 author:
-  name: "SOB"
+  name: "S.O.B."
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Art enthusiast exploring creativity and personal expression"
+  bio: "Life enthusiast exploring creativity and personal expression"
 
 # Defaults
 defaults:
@@ -52,7 +52,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: false
-      share: true
+      share: false
       related: true
       show_date: true
   # _pages
@@ -62,6 +62,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      share: false
 
 # Outputting
 permalink: /:categories/:title/

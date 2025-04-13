@@ -5,3 +5,9 @@ _site
 vendor
 Gemfile.lock
 
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
