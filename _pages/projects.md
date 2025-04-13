@@ -109,7 +109,7 @@ excerpt: "Exploring creative expression beyond the journal"
     <div class="info-grid">
       <div class="info-content">
         <h2>Project Philosophy</h2>
-        <p>My creative projects extend beyond the art journal to explore different mediums, techniques, and collaborative possibilities. Each project aims to capture the spirit of music and emotion while adding contemporary elements.</p>
+        <p>My creative projects extend beyond the journal to explore different mediums, techniques, and collaborative possibilities. Each project aims to capture the spirit of music and emotion while adding contemporary elements.</p>
         
         <ul class="feature-list">
           <li>

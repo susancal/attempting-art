@@ -1,0 +1,642 @@
+---
+layout: single
+title: "Journal"
+permalink: /journal/
+classes: wide
+header:
+  overlay_color: "#635bff"
+  overlay_filter: "0.2"
+  overlay_image: /assets/images/journal-header.jpg
+excerpt: "A personal documentation of my creative exploration"
+pagination:
+  enabled: true
+  per_page: 10
+  sort_field: 'date'
+  sort_reverse: true
+---
+
+<div class="page-container">
+  <div class="page-intro">
+    <p class="page-description">Welcome to my artistic chronicle documenting my personal creative journey. Each entry captures moments of inspiration and experimentation through images and reflections.</p>
+  </div>
+
+  <div class="journal-filters">
+    <div class="filter-container">
+      <h2 class="filter-title">Filter by Category</h2>
+      
+      <div class="category-tags">
+        <a href="/journal/" class="category-tag active">All Entries</a>
+        {% for category in site.categories %}
+          <a href="/categories/#{{ category[0] | slugify }}" class="category-tag">{{ category[0] | replace: '-', ' ' | capitalize }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="section section--entries">
+    <div class="entries-list">
+      {% for post in paginator.posts %}
+        <div class="entry-card">
+          <div class="entry-date">
+            <div class="date-circle gradient-bg">
+              <span class="date-day">{{ post.date | date: "%-d" }}</span>
+            </div>
+            <div class="date-month-year">
+              <span class="date-month">{{ post.date | date: "%b" }}</span>
+              <span class="date-year">{{ post.date | date: "%Y" }}</span>
+            </div>
+          </div>
+          <div class="entry-content">
+            <h2 class="entry-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <div class="entry-meta">
+              {% if post.categories %}
+                <div class="entry-categories">
+                  {% for category in post.categories %}
+                    <span class="entry-category">{{ category }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <div class="entry-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </div>
+            <a href="{{ post.url | relative_url }}" class="entry-link">Continue Reading →</a>
+          </div>
+          {% if post.header.teaser or post.header.image %}
+            <div class="entry-image">
+              <a href="{{ post.url | relative_url }}">
+                <img src="{{ post.header.teaser | default: post.header.image | relative_url }}" alt="{{ post.title }}" class="teaser-image">
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        <div class="pagination-container">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-item">
+              <span class="pagination-arrow">←</span> Newer Posts
+            </a>
+          {% else %}
+            <span class="pagination-item disabled">
+              <span class="pagination-arrow">←</span> Newer Posts
+            </span>
+          {% endif %}
+          
+          <span class="pagination-page-numbers">
+            Page {{ paginator.page }} of {{ paginator.total_pages }}
+          </span>
+          
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-item">
+              Older Posts <span class="pagination-arrow">→</span>
+            </a>
+          {% else %}
+            <span class="pagination-item disabled">
+              Older Posts <span class="pagination-arrow">→</span>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="section section--light section--info">
+    <div class="info-grid">
+      <div class="info-content">
+        <h2>About This Journal</h2>
+        <p>This journal serves as a visual diary documenting my creative process and artistic evolution. Each entry includes reflections on inspiration, techniques used, and personal insights.</p>
+        
+        <ul class="feature-list">
+          <li>
+            <div class="feature-bullet gradient-bg"></div>
+            <div>Chronological documentation of artistic growth and exploration</div>
+          </li>
+          <li>
+            <div class="feature-bullet accent-gradient"></div>
+            <div>Visual experiments and artistic explorations</div>
+          </li>
+          <li>
+            <div class="feature-bullet gradient-bg"></div>
+            <div>Insights into creative processes, techniques, and inspirations</div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="info-image">
+        <div class="image-placeholder gradient-bg">
+          <img src="/assets/images/journal-feature.jpg" alt="Journal" class="feature-image" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Page container */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+/* Page header */
+.page-header {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3em;
+  background-image: url('/assets/images/journal-header.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-header-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-align: center;
+  padding: 2em;
+}
+
+.page-title {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.page-excerpt {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Page intro styling */
+.page-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3em;
+}
+
+.page-description {
+  font-size: 1.2em;
+  color: var(--text-lighter);
+  line-height: 1.6;
+}
+
+/* Filter container */
+.journal-filters {
+  margin-bottom: 3em;
+}
+
+.filter-container {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+}
+
+.filter-title {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: var(--light-bg);
+  border-radius: 30px;
+  font-size: 0.85em;
+  color: var(--text-lighter);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border);
+}
+
+.category-tag:hover {
+  background-color: rgba(99, 91, 255, 0.08);
+  color: var(--primary);
+  border-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.category-tag.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Entries styling */
+.section--entries {
+  margin-bottom: 4em;
+}
+
+.entries-list {
+  margin-bottom: 3em;
+}
+
+.entry-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2em;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+.entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.entry-date {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  border-right: 1px solid var(--border);
+}
+
+.date-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8em;
+}
+
+.date-day {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.date-month-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-month {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+.date-year {
+  color: var(--text-lighter);
+  font-size: 0.8em;
+}
+
+.entry-content {
+  padding: 1.5em;
+  flex: 1;
+}
+
+.entry-title {
+  font-size: 1.4em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+.entry-title a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.entry-title a:hover {
+  color: var(--primary);
+}
+
+.entry-meta {
+  margin-bottom: 1em;
+}
+
+.entry-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.entry-category {
+  background-color: var(--light-bg);
+  color: var(--text-lighter);
+  padding: 0.3em 0.7em;
+  border-radius: 30px;
+  font-size: 0.75em;
+  border: 1px solid var(--border);
+}
+
+.entry-excerpt {
+  color: var(--text-lighter);
+  margin-bottom: 1.2em;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.entry-link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.entry-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.entry-image {
+  width: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-bg);
+  border-left: 1px solid var(--border);
+}
+
+.teaser-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.entry-image:hover .teaser-image {
+  transform: scale(1.05);
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 3em;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7em 1.2em;
+  border-radius: 30px;
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.pagination-item:hover {
+  background-color: var(--light-bg);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 7px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pagination-arrow {
+  font-size: 1.2em;
+  display: inline-block;
+  line-height: 1;
+}
+
+.pagination-page-numbers {
+  color: var(--text-lighter);
+  font-size: 0.9em;
+}
+
+.pagination-item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Info section styling */
+.section--light {
+  background-color: var(--light-bg);
+  padding: 4em 0;
+  border-radius: 12px;
+  margin-bottom: 4em;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.info-content h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.info-content p {
+  font-size: 1.1em;
+  color: var(--text-lighter);
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.2em;
+}
+
+.feature-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 1em;
+  margin-top: 0.4em;
+}
+
+.info-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+  
+  .info-image {
+    grid-row: 1;
+  }
+  
+  .info-content {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .entry-image {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2em;
+  }
+  
+  .section--light {
+    padding: 3em 0;
+  }
+  
+  .entry-card {
+    flex-direction: column;
+  }
+  
+  .entry-date {
+    flex-direction: row;
+    padding: 1em;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    justify-content: flex-start;
+    min-width: auto;
+  }
+  
+  .date-circle {
+    margin-bottom: 0;
+    margin-right: 1em;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .date-month-year {
+    align-items: flex-start;
+  }
+  
+  .entry-image {
+    width: 100%;
+    height: 180px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  
+  .pagination-container {
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .page-header {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .entry-content {
+    padding: 1.2em;
+  }
+  
+  .entry-title {
+    font-size: 1.2em;
+  }
+  
+  .entry-excerpt {
+    font-size: 0.9em;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // This will highlight the active category if JavaScript is enabled
+  const currentPath = window.location.pathname;
+  const categoryTags = document.querySelectorAll('.category-tag');
+  
+  categoryTags.forEach(tag => {
+    if (tag.getAttribute('href') === currentPath) {
+      tag.classList.add('active');
+    } else if (currentPath === '/journal/' && tag.textContent === 'All Entries') {
+      tag.classList.add('active');
+    } else {
+      tag.classList.remove('active');
+    }
+  });
+});
+</script>

@@ -396,7 +396,8 @@ body::before {
   filter: contrast(120%);
 }
 
-/* Decorative element for artistic effect */
+/* Decorative element disabled for simpler text display */
+/* 
 .page__content p:first-of-type::first-letter {
   font-family: 'Bodoni Moda', serif;
   font-size: 3.5em;
@@ -406,6 +407,7 @@ body::before {
   color: var(--deep-burgundy);
   text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
 }
+*/
 
 /* Stylish separators */
 hr {

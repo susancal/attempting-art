@@ -20,7 +20,7 @@
 
 title: Attempting Art
 description: >- # this means to ignore newlines until "baseurl:"
-  A modern art journal for personal inspiration, creativity, and joy.
+  A modern journal for personal inspiration, creativity, and joy.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://attempting.art" # the base hostname & protocol for your site
 domain: attempting.art
@@ -68,7 +68,7 @@ permalink: /:categories/:title/
 
 # Pagination Settings
 paginate: 5
-paginate_path: "/art-journal/page:num/"
+paginate_path: "/journal/page:num/"
 
 # Advanced pagination (for local development)
 pagination:

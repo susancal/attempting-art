@@ -1,8 +1,8 @@
 main:
   - title: "About Me"
     url: /about/
-  - title: "Art Journal"
-    url: /art-journal/
+  - title: "Journal"
+    url: /journal/
   - title: "Get Inspired"
     url: /get-inspired/
   - title: "Other Projects"

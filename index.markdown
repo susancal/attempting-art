@@ -6,94 +6,30 @@ header:
   overlay_filter: "0.3"
   overlay_image: /assets/images/discoyard.jpg
 excerpt: >
-  An art journal celebrating personal creativity through a modern lens
+  A journal celebrating personal creativity and doing things that make me happy
 ---
 
 <div class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">Creative expression and <span class="highlight">artistic discovery</span></h1>
+      <h1 class="hero-title">Chasing joy and <span class="highlight">creative discovery</span></h1>
       <p class="hero-description">A personal project documenting my artistic explorations and creative growth, capturing the evolution of my unique artistic voice.</p>
       <div class="hero-actions">
-        <a href="/art-journal/" class="btn btn--primary">View Journal</a>
-        <a href="/about/" class="btn btn--secondary">About This Project</a>
+        <a href="/journal/" class="btn btn--primary">View Journal</a>
+        <a href="/about/" class="btn btn--secondary">About Me</a>
       </div>
     </div>
     <div class="hero-image">
       <div class="image-placeholder gradient-bg">
-        <img src="/assets/images/art-journal-feature.jpg" alt="Art Journal" class="feature-image" onerror="this.style.display='none'">
+        <img class="feature-image">
       </div>
     </div>
   </div>
 </div>
 
-<div class="section section--light">
-  <div class="container">
-    <h2 class="section__title">What You'll Find Here</h2>
-    <p class="section__intro">Explore these areas of the site to discover artistic inspiration and creative journeys throughout my personal artistic development.</p>
-    
-    <div class="feature-grid">
-      <div class="feature-item">
-        <div class="feature-icon gradient-bg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM12 17L15 11L17 15L19 12L19 19H5L9 13L12 17Z" fill="white"/>
-          </svg>
-        </div>
-        <h3>Art Journal</h3>
-        <p>A chronological collection of artworks with reflections on process and inspiration, capturing my creative journey.</p>
-        <a href="/art-journal/" class="feature-link">Browse Journal →</a>
-      </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon accent-gradient">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.66 8L12 2.35L6.34 8C4.78 9.56 4 11.64 4 13.64C4 15.64 4.78 17.75 6.34 19.31C7.9 20.87 9.95 21.66 12 21.66C14.05 21.66 16.1 20.87 17.66 19.31C19.22 17.75 20 15.64 20 13.64C20 11.64 19.22 9.56 17.66 8ZM6 14C6 12 6.5 10.5 7.7 9.3L12 5L16.3 9.3C17.5 10.5 18 12 18 14H6Z" fill="white"/>
-          </svg>
-        </div>
-        <h3>Get Inspired</h3>
-        <p>Interactive tools including quotes, color palettes, and creative prompts to spark your artistic imagination.</p>
-        <a href="/get-inspired/" class="feature-link">Find Inspiration →</a>
-      </div>
-      
-      <div class="feature-item">
-        <div class="feature-icon gradient-bg">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.9 12C3.9 10.29 5.29 8.9 7 8.9H11V7H7C4.24 7 2 9.24 2 12C2 14.76 4.24 17 7 17H11V15.1H7C5.29 15.1 3.9 13.71 3.9 12ZM8 13H16V11H8V13ZM17 7H13V8.9H17C18.71 8.9 20.1 10.29 20.1 12C20.1 13.71 18.71 15.1 17 15.1H13V17H17C19.76 17 22 14.76 22 12C22 9.24 19.76 7 17 7Z" fill="white"/>
-          </svg>
-        </div>
-        <h3>Creative Projects</h3>
-        <p>Explore additional artistic endeavors and experimental works that extend beyond the journal entries.</p>
-        <a href="/projects/" class="feature-link">View Projects →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <h2 class="section__title">Recent Journal Entries</h2>
-    
-    <div class="grid__wrapper">
-      {% for post in site.posts limit:4 %}
-        {% include archive-single.html type="grid" %}
-      {% endfor %}
-    </div>
-    
-    <div class="section-actions">
-      <a href="/art-journal/" class="btn btn--primary">View All Entries</a>
-    </div>
-  </div>
-</div>
-
-<div class="section section--cta gradient-bg">
-  <div class="container">
-    <h2 class="cta-title">Ready to Get Inspired?</h2>
-    <p class="cta-text">Discover tools to spark your creativity with interactive features designed to inspire your artistic journey.</p>
-    <a href="/get-inspired/" class="btn btn--light">Find Inspiration</a>
-  </div>
-</div>
-
+{% include random-image-list.html %}
 <script src="{{ '/assets/js/inspiration.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/random-images.js' | relative_url }}"></script>
 
 <style>
 /* Hero section styling */
