@@ -1,0 +1,122 @@
+/* 
+ * Spacing Reduction CSS
+ * Reduces padding and margins by approximately 25% sitewide
+ * to create a more compact, less "floaty" design
+ */
+
+/* Section padding */
+.page__hero--overlay {
+  padding: 3em 0 !important; /* Reduced from 4em */
+}
+
+.section {
+  padding: 3em 0 !important; /* Reduced from 4em */
+}
+
+/* Grid and module spacing */
+.module-card {
+  padding: 19px !important; /* Reduced from 25px */
+  margin-bottom: 23px !important; /* Reduced from 30px */
+}
+
+.feature-grid {
+  grid-gap: 1.5em !important; /* Reduced from 2em */
+  margin: 2.25em 0 !important; /* Reduced from 3em */
+}
+
+.gallery {
+  grid-gap: 1.15em !important; /* Reduced from 1.5em */
+  margin: 1.5em 0 !important; /* Reduced from 2em */
+}
+
+/* Content margins */
+.section__title {
+  margin-bottom: 0.75em !important; /* Reduced from 1em */
+}
+
+.section__intro {
+  margin: 0 auto 1.5em !important; /* Reduced from 2em */
+}
+
+.page__content h2 {
+  margin-top: 1.125em !important; /* Reduced from 1.5em */
+  margin-bottom: 0.6em !important; /* Reduced from 0.8em */
+}
+
+.page__content h3 {
+  margin-top: 0.9em !important; /* Reduced from 1.2em */
+  margin-bottom: 0.45em !important; /* Reduced from 0.6em */
+}
+
+p {
+  margin-bottom: 1.125em !important; /* Reduced from 1.5em */
+}
+
+/* Navigation and button padding */
+.greedy-nav a {
+  padding: 0.75em 0.9em !important; /* Reduced from 1em 1.2em */
+}
+
+.btn {
+  padding: 0.45em 0.9em !important; /* Reduced from 0.6em 1.2em */
+}
+
+/* Transform effects - reduce "zoomed" feeling */
+.grid__item:hover {
+  transform: translateY(-3px) !important; /* Reduced from -4px */
+}
+
+.archive__item-teaser:hover::after {
+  opacity: 0.75 !important; /* Reduced from 1 */
+}
+
+/* Make container more compact */
+.page__content {
+  padding-right: 15px !important; /* Reduced from original */
+  padding-left: 15px !important; /* Reduced from original */
+}
+
+.page__inner-wrap {
+  max-width: 95% !important; /* Make content use more of the screen */
+  margin: 0 auto !important;
+}
+
+/* Additional spacing reductions */
+blockquote {
+  padding: 1.125em 0.9em !important; /* Reduced from 1.5em 1.2em */
+}
+
+hr {
+  margin: 1.875em 0 !important; /* Reduced from 2.5em */
+}
+
+/* Body font size reduction */
+body {
+  font-size: 95% !important; /* Slightly smaller font to match the tighter spacing */
+}
+
+.masthead {
+  padding: 0.75em 1em !important; /* Reduced padding for header */
+}
+
+/* Reduce default article spacing */
+.page {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+/* Adjust splash page layout */
+.splash .page {
+  width: 95% !important;
+}
+
+/* Reduce archive item padding */
+.archive__item-title {
+  padding: 0 0.9em !important; /* Reduced from 1.2em */
+}
+
+.archive__item-excerpt {
+  padding: 0 0.9em 0.9em !important; /* Reduced from 1.2em */
+}
