@@ -1,6 +1,6 @@
 /**
  * Sophisticated Artistic Inspiration Tools
- * Elegantly designed for my creative art journal
+ * Elegantly designed for my creative journal
  * Security and performance optimized version
  */
 

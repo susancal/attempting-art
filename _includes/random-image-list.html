@@ -1,0 +1,16 @@
+{% comment %}
+This file generates a list of random images using Jekyll's static site generation.
+It creates a JavaScript array of image paths that can be used by the random image script.
+{% endcomment %}
+
+<script>
+// This array is generated at build time by Jekyll
+window.randomImagePaths = [
+{% assign image_files = site.static_files | where: "image", true %}
+{% for image in image_files %}
+  {% if image.path contains '/assets/images/random/' %}
+    "{{ image.name }}"{% unless forloop.last %},{% endunless %}
+  {% endif %}
+{% endfor %}
+];
+</script>

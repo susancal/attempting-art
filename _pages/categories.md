@@ -7,7 +7,7 @@ header:
   overlay_color: "#635bff"
   overlay_filter: "0.2"
   overlay_image: /assets/images/categories-header.jpg
-excerpt: "Browse art journal entries by category"
+excerpt: "Browse journal entries by category"
 ---
 
 <style>
