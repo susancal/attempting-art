@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-14/
 Draw a secret that only the trees know.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-14-IMG_2090.HEIC.jpg" target="_blank" class="daily-doodle-link">
-  <img src="/assets/images/doodles/doodle-2025-04-14-IMG_2090.HEIC.jpg" alt="Daily Doodle for April 14, 2025" class="daily-doodle-image">
+<a href="/assets/images/doodles/doodle-2025-04-14-IMG_2090.HEIC.jpg" target="_blank" class="post-image-link">
+  <img src="/assets/images/doodles/doodle-2025-04-14-IMG_2090.HEIC.jpg" alt="Daily Doodle for April 14, 2025" class="post-image">
 </a>
 
 #### Description:

@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-09/
 Draw a parade of unusual creatures.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-09-IMG_2021.HEIC.jpg" target="_blank" class="daily-doodle-link">
-  <img src="/assets/images/doodles/doodle-2025-04-09-IMG_2021.HEIC.jpg" alt="Daily Doodle for April 09, 2025" class="daily-doodle-image">
+<a href="/assets/images/doodles/doodle-2025-04-09-IMG_2021.HEIC.jpg" target="_blank" class="post-image-link">
+  <img src="/assets/images/doodles/doodle-2025-04-09-IMG_2021.HEIC.jpg" alt="Daily Doodle for April 09, 2025" class="post-image">
 </a>
 
 #### Description:

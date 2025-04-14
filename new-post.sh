@@ -30,8 +30,15 @@ echo "1) daily-doodle"
 echo "2) journal"
 echo "3) project"
 echo "4) inspiration"
-echo "5) other (custom)"
-read -p "Select a category (1-5): " category_choice
+echo "5) knitting"
+echo "6) fashion"
+echo "7) garden"
+echo "8) software"
+echo "9) home"
+echo "10) art"
+echo "11) dog"
+echo "12) other (custom)"
+read -p "Select a category (1-12): " category_choice
 
 case $category_choice in
     1) 
@@ -55,6 +62,41 @@ case $category_choice in
         post_slug="${post_title// /-}"
         ;;
     5) 
+        category="knitting"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    6) 
+        category="fashion"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    7) 
+        category="garden"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    8) 
+        category="software"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    9) 
+        category="home"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    10) 
+        category="art"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    11) 
+        category="dog"
+        permalink="/${category}/${post_date}-${post_title// /-}/"
+        post_slug="${post_title// /-}"
+        ;;
+    12) 
         read -p "Enter custom category: " category
         permalink="/${category}/${post_date}-${post_title// /-}/"
         post_slug="${post_title// /-}"
@@ -67,11 +109,17 @@ case $category_choice in
         ;;
 esac
 
-# Ask if the post includes an image
-read -p "Does this post include an image? (y/n): " has_image
+# Create images directory based on category if it doesn't exist
+mkdir -p "assets/images/${category}"
 
-if [[ $has_image == "y" || $has_image == "Y" ]]; then
-    # Ask for image source
+# Initialize post content
+post_content=""
+image_counter=1
+
+# Function to add an image
+add_image() {
+    local image_path=""
+    
     echo "Image source options:"
     echo "1) AirDropped image (IMG_NUMBER.HEIC in Downloads)"
     echo "2) Custom path"
@@ -86,14 +134,11 @@ if [[ $has_image == "y" || $has_image == "Y" ]]; then
             
             if [ ! -f "$downloads_path" ]; then
                 echo "Cannot find image $image_file in your Downloads folder."
-                exit 1
+                return 1
             fi
             
-            # Create images directory based on category
-            mkdir -p "assets/images/${category}"
-            
             # Generate a filename for the image
-            image_filename="${category}-${post_date}-$(echo "$image_file" | tr ' ' '-' | tr -cd 'a-zA-Z0-9-_.')"
+            image_filename="${category}-${post_date}-img${image_counter}-$(echo "$image_file" | tr ' ' '-' | tr -cd 'a-zA-Z0-9-_.')"
             image_path="assets/images/${category}/$image_filename"
             
             # Make sure image path ends with .jpg
@@ -114,17 +159,14 @@ if [[ $has_image == "y" || $has_image == "Y" ]]; then
             
             if [ ! -f "$custom_image_path" ]; then
                 echo "Cannot find image at $custom_image_path"
-                exit 1
+                return 1
             fi
-            
-            # Create images directory based on category
-            mkdir -p "assets/images/${category}"
             
             # Get the filename without path
             image_filename=$(basename "$custom_image_path")
             
             # Generate a filename for the image
-            new_image_filename="${category}-${post_date}-$(echo "$image_filename" | tr ' ' '-' | tr -cd 'a-zA-Z0-9-_.')"
+            new_image_filename="${category}-${post_date}-img${image_counter}-$(echo "$image_filename" | tr ' ' '-' | tr -cd 'a-zA-Z0-9-_.')"
             image_path="assets/images/${category}/$new_image_filename"
             
             # Copy the image
@@ -133,44 +175,75 @@ if [[ $has_image == "y" || $has_image == "Y" ]]; then
             ;;
         *)
             echo "Invalid choice. No image will be added."
-            has_image="n"
+            return 1
             ;;
     esac
     
-    # Get image description if an image is included
-    if [[ $has_image == "y" || $has_image == "Y" ]]; then
-        read -p "Description of the image: " image_description
-    fi
-fi
+    # Get image description
+    read -p "Description of the image: " image_description
+    
+    # Add image to post content
+    post_content+="#### Image $([ $image_counter -gt 1 ] && echo "$image_counter"):
+<a href=\"/${image_path}\" target=\"_blank\" class=\"post-image-link\">
+  <img src=\"/${image_path}\" alt=\"${post_title}$([ $image_counter -gt 1 ] && echo " - Image $image_counter")\" class=\"post-image\">
+</a>
 
-# Get post content
-echo "Enter the main content of your post (press Ctrl+D when finished):"
-post_content=$(cat)
+${image_description}
+
+"
+    image_counter=$((image_counter + 1))
+    return 0
+}
+
+# Function to add text content
+add_text() {
+    # Ask if a header is needed
+    read -p "Do you want to add a section header? (y/n): " add_header
+    
+    if [[ $add_header == "y" || $add_header == "Y" ]]; then
+        read -p "Enter the header text: " header_text
+        post_content+="### ${header_text}
+
+"
+    fi
+    
+    # Get the text content
+    echo "Enter your text content (press Ctrl+D when finished):"
+    local text_content=$(cat)
+    post_content+="${text_content}
+
+"
+}
+
+# Build the post content interactively
+while true; do
+    echo "What would you like to add next?"
+    echo "1) Add an image"
+    echo "2) Add text content"
+    echo "3) Finish and create post"
+    read -p "Choose an option (1-3): " next_content
+    
+    case $next_content in
+        1)
+            add_image
+            ;;
+        2)
+            add_text
+            ;;
+        3)
+            break
+            ;;
+        *)
+            echo "Invalid choice. Please select 1, 2, or 3."
+            ;;
+    esac
+done
 
 # Create post filename
 post_filename="_posts/${post_date}-${post_slug}.markdown"
 
-# Create the post with conditional image section
-if [[ $has_image == "y" || $has_image == "Y" ]]; then
-    cat > "$post_filename" << EOF
----
-layout: single
-title: ${post_title}
-date: ${post_date} 18:32 -0500
-categories: ${category}
-permalink: ${permalink}
----
-${post_content}
-
-#### Image:
-<a href="/${image_path}" target="_blank" class="post-image-link">
-  <img src="/${image_path}" alt="${post_title}" class="post-image">
-</a>
-
-${image_description}
-EOF
-else
-    cat > "$post_filename" << EOF
+# Create the post
+cat > "$post_filename" << EOF
 ---
 layout: single
 title: ${post_title}
@@ -180,6 +253,5 @@ permalink: ${permalink}
 ---
 ${post_content}
 EOF
-fi
 
 echo "New post created at $post_filename"
