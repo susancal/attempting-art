@@ -12,7 +12,7 @@ excerpt: >
 <div class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">Chasing joy and <span class="highlight">creative discovery</span></h1>
+      <h1 class="hero-title">Chasing joy and <span class="highlight">discovering creativity</span></h1>
       <p class="hero-description">A personal project documenting my artistic explorations and creative growth, capturing the evolution of my unique artistic voice.</p>
       <div class="hero-actions">
         <a href="/journal/" class="btn btn--primary">View Journal</a>
