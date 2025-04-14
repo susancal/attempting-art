@@ -3,13 +3,11 @@
 ---
 
 @charset "utf-8";
-@use "sass:math";
-@use "sass:color";
 
 /* Font display optimization - not importing Google Fonts directly here as it's in the head with performance attributes */
 
 /* Minimal Mistakes default */
-@forward "minimal-mistakes";
+@import "minimal-mistakes";
 
 /* Custom CSS imports */
 @import "custom/daily-doodle.css";
@@ -381,7 +379,7 @@ blockquote {
 
 /* Sophisticated page background styling */
 body {
-  background-color: var(--warm-ivory);
+  background-color: var(--white);
   position: relative;
 }
 
@@ -401,19 +399,6 @@ body::before {
     radial-gradient(circle at 60% 80%, rgba(25, 25, 112, 0.03) 0%, transparent 40%);
   filter: contrast(120%);
 }
-
-/* Decorative element disabled for simpler text display */
-/* 
-.page__content p:first-of-type::first-letter {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 3.5em;
-  float: left;
-  line-height: 0.8;
-  margin-right: 0.15em;
-  color: var(--deep-burgundy);
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
-}
-*/
 
 /* Stylish separators */
 hr {
