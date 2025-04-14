@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-12/
 Draw a memory, but change one important detail.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-12-IMG_2048.HEIC.jpg" target="_blank" class="post-image-link">
-  <img src="/assets/images/doodles/doodle-2025-04-12-IMG_2048.HEIC.jpg" alt="Daily Doodle for April 12, 2025" class="post-image">
+<a href="/assets/images/doodles/doodle-2025-04-12-IMG_2048.HEIC.jpg" target="_blank" class="daily-doodle-link">
+  <img src="/assets/images/doodles/doodle-2025-04-12-IMG_2048.HEIC.jpg" alt="Daily Doodle for April 12, 2025" class="daily-doodle-image">
 </a>
 
 #### Description: 

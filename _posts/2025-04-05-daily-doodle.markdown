@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-05/
 Draw a conversation between two things that can't talk.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-05-IMG_1938.HEIC.jpg" target="_blank" class="post-image-link">
-  <img src="/assets/images/doodles/doodle-2025-04-05-IMG_1938.HEIC.jpg" alt="Daily Doodle for April 05, 2025" class="post-image">
+<a href="/assets/images/doodles/doodle-2025-04-05-IMG_1938.HEIC.jpg" target="_blank" class="daily-doodle-link">
+  <img src="/assets/images/doodles/doodle-2025-04-05-IMG_1938.HEIC.jpg" alt="Daily Doodle for April 05, 2025" class="daily-doodle-image">
 </a>
 
 #### Description:

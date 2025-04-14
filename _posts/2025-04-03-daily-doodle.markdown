@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-03/
 Draw the feeling of warmth.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-03-IMG_1931.HEIC.jpg" target="_blank" class="post-image-link">
-  <img src="/assets/images/doodles/doodle-2025-04-03-IMG_1931.HEIC.jpg" alt="Daily Doodle for April 03, 2025" class="post-image">
+<a href="/assets/images/doodles/doodle-2025-04-03-IMG_1931.HEIC.jpg" target="_blank" class="daily-doodle-link">
+  <img src="/assets/images/doodles/doodle-2025-04-03-IMG_1931.HEIC.jpg" alt="Daily Doodle for April 03, 2025" class="daily-doodle-image">
 </a>
 
 #### Description:

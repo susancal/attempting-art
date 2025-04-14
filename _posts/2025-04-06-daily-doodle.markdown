@@ -9,8 +9,8 @@ permalink: /daily-doodle/2025-04-06/
 Draw something growing.
 
 #### What I made:
-<a href="/assets/images/doodles/doodle-2025-04-06-IMG_1961.HEIC.jpg" target="_blank" class="post-image-link">
-  <img src="/assets/images/doodles/doodle-2025-04-06-IMG_1961.HEIC.jpg" alt="Daily Doodle for April 06, 2025" class="post-image">
+<a href="/assets/images/doodles/doodle-2025-04-06-IMG_1961.HEIC.jpg" target="_blank" class="daily-doodle-link">
+  <img src="/assets/images/doodles/doodle-2025-04-06-IMG_1961.HEIC.jpg" alt="Daily Doodle for April 06, 2025" class="daily-doodle-image">
 </a>
 
 #### Description:
