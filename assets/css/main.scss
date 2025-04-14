@@ -9,6 +9,9 @@
 /* Minimal Mistakes default */
 @import "minimal-mistakes";
 
+/* Custom CSS imports */
+@import "custom/daily-doodle.css";
+
 /* Modern color palette inspired by Stripe's clean design */
 :root {
   --primary: #0D90E2;

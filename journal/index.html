@@ -11,6 +11,7 @@ excerpt: "A personal documentation of my creative exploration"
 pagination:
   enabled: true
   per_page: 10
+  permalink: 'page:num/'  # This is a relative path
   sort_field: 'date'
   sort_reverse: true
 ---
@@ -79,9 +80,15 @@ pagination:
       <div class="pagination">
         <div class="pagination-container">
           {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-item">
-              <span class="pagination-arrow">←</span> Newer Posts
-            </a>
+            {% if paginator.previous_page == 1 %}
+              <a href="{{ '/journal/' | relative_url }}" class="pagination-item">
+                <span class="pagination-arrow">←</span> Newer Posts
+              </a>
+            {% else %}
+              <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-item">
+                <span class="pagination-arrow">←</span> Newer Posts
+              </a>
+            {% endif %}
           {% else %}
             <span class="pagination-item disabled">
               <span class="pagination-arrow">←</span> Newer Posts
@@ -111,21 +118,6 @@ pagination:
       <div class="info-content">
         <h2>About This Journal</h2>
         <p>This journal serves as a visual diary documenting my creative process and artistic evolution. Each entry includes reflections on inspiration, techniques used, and personal insights.</p>
-        
-        <ul class="feature-list">
-          <li>
-            <div class="feature-bullet gradient-bg"></div>
-            <div>Chronological documentation of artistic growth and exploration</div>
-          </li>
-          <li>
-            <div class="feature-bullet accent-gradient"></div>
-            <div>Visual experiments and artistic explorations</div>
-          </li>
-          <li>
-            <div class="feature-bullet gradient-bg"></div>
-            <div>Insights into creative processes, techniques, and inspirations</div>
-          </li>
-        </ul>
       </div>
     </div>
   </div>

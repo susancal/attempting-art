@@ -10,6 +10,7 @@ gem "github-pages", "~> 232", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-paginate"
+  gem "jekyll-paginate-v2"  # Advanced pagination
   gem "jekyll-feed"
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"

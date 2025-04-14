@@ -49,11 +49,11 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true
+      author_profile: false
+      read_time: false
       comments: false
       share: false
-      related: true
+      related: false
       show_date: true
   # _pages
   - scope:
@@ -61,21 +61,22 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       share: false
 
 # Outputting
 permalink: /:categories/:title/
 
-# Pagination Settings
-paginate: 5
-paginate_path: "/journal/page:num/"
+# Pagination Settings - standard Jekyll pagination
+# This is commented out because we're using the pagination-v2 plugin
+# paginate: 5
+# paginate_path: "/journal/page:num/"
 
-# Advanced pagination (for local development)
+# Use the jekyll-pagination-v2 plugin for more advanced pagination
 pagination:
   enabled: true
   per_page: 5
-  permalink: '/page:num/'
+  permalink: 'page:num/'
   title: ':title - Page :num'
   limit: 0
   sort_field: 'date'
@@ -87,7 +88,7 @@ pagination:
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap

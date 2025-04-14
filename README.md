@@ -15,6 +15,8 @@ This site is built with Jekyll and uses the Minimal Mistakes theme.
 
 ### Creating New Content
 
+#### Regular Posts
+
 The site uses the `jekyll-compose` plugin to make creating content easier.
 
 ```bash
@@ -33,6 +35,28 @@ bundle exec jekyll publish _drafts/my-draft-post.md
 # Create a new page
 bundle exec jekyll page "My New Page"
 ```
+
+#### Daily Doodle Posts
+
+To create a new Daily Doodle post, use the `new-daily-doodle.sh` script:
+
+```bash
+./new-daily-doodle.sh
+```
+
+The script will guide you through creating a new Daily Doodle post by asking:
+
+1. When you made the doodle (date in YYYY-MM-DD format)
+2. The prompt that ChatGPT gave you
+3. The image number (just the number from IMG_XXXX.HEIC) - assumes you AirDropped the image to your Downloads folder
+4. A description of what you created
+5. Any reflections on the process
+
+The script will:
+- Copy the image from your Downloads folder
+- Convert it to JPEG format
+- Create a new post with proper formatting
+- Add a custom permalink for better URL structure
 
 ### Image Processing
 
