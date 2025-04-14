@@ -100,6 +100,8 @@ excerpt: >
   width: 100%;
   height: 100%;
   object-fit: cover;
+  min-height: 200px; /* Ensure minimum height on mobile */
+  display: block !important; /* Force display on all devices */
 }
 
 /* Feature grid styling */
@@ -239,6 +241,21 @@ excerpt: >
   
   .section {
     padding: 3em 0;
+  }
+  
+  .hero-image {
+    width: 100%;
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    min-height: 200px;
+  }
+  
+  .feature-image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 </style>
