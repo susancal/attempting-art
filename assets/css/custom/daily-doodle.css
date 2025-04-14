@@ -19,3 +19,49 @@
   display: inline-block;
   margin: 1em 0;
 }
+
+/* Completely remove lightbox navigation arrows */
+.mfp-arrow,
+.mfp-arrow-left,
+.mfp-arrow-right,
+button.mfp-arrow,
+button.mfp-arrow-left,
+button.mfp-arrow-right,
+.mfp-figure:after,
+.mfp-container:after,
+.mfp-container:before {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
+/* Target gallery navigation specifically */
+.mfp-gallery .mfp-container .mfp-arrow,
+.mfp-gallery .mfp-arrow,
+.mfp-gallery button.mfp-arrow {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Improve lightbox close button styling */
+.mfp-close,
+button.mfp-close {
+  font-size: 40px !important;
+  opacity: 0.8 !important;
+}
+
+/* Override gallery navigation CSS */
+.mfp-image-holder .mfp-content {
+  cursor: default !important;
+}
+
+/* Also disable counter */
+.mfp-counter {
+  display: none !important;
+}
