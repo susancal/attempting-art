@@ -3,11 +3,13 @@
 ---
 
 @charset "utf-8";
+@use "sass:math";
+@use "sass:color";
 
 /* Font display optimization - not importing Google Fonts directly here as it's in the head with performance attributes */
 
 /* Minimal Mistakes default */
-@import "minimal-mistakes";
+@forward "minimal-mistakes";
 
 /* Custom CSS imports */
 @import "custom/daily-doodle.css";

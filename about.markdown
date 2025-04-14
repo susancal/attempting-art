@@ -18,8 +18,7 @@ For a long time, "I'm not a creative person" was a thought in my head. I would a
 
 
 ### About me
-- I have an affinity for marching bands and am a uber-fan of Drum Corps International. I am on the [Bluecoats](https://bluecoats.com/){:target="_blank"} Board of Directors! I lost my mind during the marching band scene in Severance s2e10.
-- I am an Illinois Certified Master Naturalist.
+- I have an affinity for marching bands and am a uber-fan of Drum Corps International. I am on the Board of Directors for the 2024 DCI World Champions, the [Bluecoats](https://bluecoats.com/){:target="_blank"}!
 - I love people who are funny, kind, and don't take themselves too seriously.
 - I can't do neutrals. My closet and home is full of vibrant and fun colors.
 - I love horses... seriously it's just in my DNA

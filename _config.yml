@@ -20,7 +20,7 @@
 
 title: Attempting Art
 description: >- # this means to ignore newlines until "baseurl:"
-  A journal for personal inspiration, creativity, and joy.
+  A journal celebrating personal creativity and doing things that make me happy.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://attempting.art" # the base hostname & protocol for your site
 domain: attempting.art
@@ -39,7 +39,7 @@ minimal_mistakes_skin: "contrast" # "default", "air", "aqua", "contrast", "dark"
 author:
   name: "S.O.B."
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Life enthusiast exploring creativity and personal expression"
+  bio: "Growing, goofing, and making weird little things"
 
 # Defaults
 defaults:
@@ -71,6 +71,11 @@ permalink: /:categories/:title/
 paginate: 10
 # Using a different format to ensure the first page is treated correctly
 paginate_path: "/journal/:num/"
+
+# Sass settings to suppress deprecation warnings
+sass:
+  quiet_deps: true
+  style: compressed
 
 plugins:
   - jekyll-feed
