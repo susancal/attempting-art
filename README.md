@@ -15,9 +15,43 @@ This site is built with Jekyll and uses the Minimal Mistakes theme.
 
 ### Creating New Content
 
-#### Regular Posts
+#### Using the Post Creation Script
 
-The site uses the `jekyll-compose` plugin to make creating content easier.
+The simplest way to create new content is using the custom post creation scripts:
+
+1. **General Posts** - For any type of post:
+   ```bash
+   ./new-post.sh
+   ```
+   
+   This versatile script handles all post types and will:
+   - Ask for the post date and title
+   - Let you select a category
+   - Provide options for including images (AirDropped or custom path)
+   - Format content appropriately
+   - Add permalinks and proper metadata
+
+2. **Daily Doodle Posts** - Specifically for doodles:
+   ```bash
+   ./new-daily-doodle.sh
+   ```
+   
+   This script is specialized for daily doodles and will ask for:
+   - When you made the doodle (date in YYYY-MM-DD format)
+   - The prompt that ChatGPT gave you
+   - The image number (just the number from IMG_XXXX.HEIC from your Downloads folder)
+   - A description of what you created
+   - Any reflections on the process
+
+Both scripts will:
+- Copy images from your Downloads folder
+- Convert them to JPEG format when needed
+- Create posts with proper formatting
+- Add custom permalinks for better URL structure
+
+#### Manual Post Creation
+
+The site also uses the `jekyll-compose` plugin for manual content creation:
 
 ```bash
 # Install the jekyll-compose gem if you haven't already
@@ -35,28 +69,6 @@ bundle exec jekyll publish _drafts/my-draft-post.md
 # Create a new page
 bundle exec jekyll page "My New Page"
 ```
-
-#### Daily Doodle Posts
-
-To create a new Daily Doodle post, use the `new-daily-doodle.sh` script:
-
-```bash
-./new-daily-doodle.sh
-```
-
-The script will guide you through creating a new Daily Doodle post by asking:
-
-1. When you made the doodle (date in YYYY-MM-DD format)
-2. The prompt that ChatGPT gave you
-3. The image number (just the number from IMG_XXXX.HEIC) - assumes you AirDropped the image to your Downloads folder
-4. A description of what you created
-5. Any reflections on the process
-
-The script will:
-- Copy the image from your Downloads folder
-- Convert it to JPEG format
-- Create a new post with proper formatting
-- Add a custom permalink for better URL structure
 
 ### Image Processing
 
