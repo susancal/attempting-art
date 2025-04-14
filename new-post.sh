@@ -183,9 +183,10 @@ add_image() {
     read -p "Description of the image: " image_description
     
     # Add image to post content
+    # Use daily-doodle classes for all posts since they're working correctly
     post_content+="#### Image $([ $image_counter -gt 1 ] && echo "$image_counter"):
-<a href=\"/${image_path}\" target=\"_blank\" class=\"post-image-link\">
-  <img src=\"/${image_path}\" alt=\"${post_title}$([ $image_counter -gt 1 ] && echo " - Image $image_counter")\" class=\"post-image\">
+<a href=\"/${image_path}\" target=\"_blank\" class=\"daily-doodle-link\">
+  <img src=\"/${image_path}\" alt=\"${post_title}$([ $image_counter -gt 1 ] && echo " - Image $image_counter")\" class=\"daily-doodle-image\">
 </a>
 
 ${image_description}
