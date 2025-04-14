@@ -67,28 +67,15 @@ defaults:
 # Outputting
 permalink: /:categories/:title/
 
-# Pagination Settings - standard Jekyll pagination
-# This is commented out because we're using the pagination-v2 plugin
-# paginate: 5
-# paginate_path: "/journal/page:num/"
-
-# Use the jekyll-pagination-v2 plugin for more advanced pagination
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: 'page:num/'
-  title: ':title - Page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  trail: 
-    before: 2
-    after: 2
+# Pagination Settings - standard Jekyll pagination supported by GitHub Pages
+paginate: 10
+# Using a different format to ensure the first page is treated correctly
+paginate_path: "/journal/:num/"
 
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
