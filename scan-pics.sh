@@ -44,8 +44,8 @@ process_image() {
     
     echo -e "${YELLOW}⚙️  Processing:${NC} $img"
     
-    # Strip metadata and save to temp file
-    if exiftool -all= -o "$output_path" "$img" > /dev/null 2>&1; then
+    # Strip metadata, preserve orientation, and save to temp file
+    if exiftool -all= -tagsFromFile @ -orientation -o "$output_path" "$img" > /dev/null 2>&1; then
         PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
         echo -e "${GREEN}✅ Stripped:${NC} $img"
     else
