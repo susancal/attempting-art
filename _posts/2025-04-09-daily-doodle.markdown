@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Daily Doodle for April 09, 2025
+title: Daily Doodle for April 9, 2025
 date: 2025-04-09 18:32 -0500
 categories: daily-doodle
 permalink: /daily-doodle/2025-04-09/
