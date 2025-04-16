@@ -14,7 +14,7 @@ Draw the feeling of something slipping away.
 </a>
 
 #### Description:
-Me giving the side-eye to a bmessy tangled ball of shit I choose to leave behind.
+Me giving the side-eye to a messy tangled ball of shit I choose to leave behind.
 
 #### Reflections: 
 This felt good. I like drawing bubble letters. I wish I'd gone more extreme with my sus eyebrows.
