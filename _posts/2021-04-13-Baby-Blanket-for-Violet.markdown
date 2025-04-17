@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Baby Blanket for Violet
+title: Baby Blanket for Vivi
 date: 2022-04-13 18:32 -0500
 categories: knitting
 permalink: /knitting/2022-04-13-Baby-Blanket-for-Vivi/
