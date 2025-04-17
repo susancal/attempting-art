@@ -1,9 +1,9 @@
 ---
 layout: single
 title: Baby Blanket for Violet
-date: 2021-04-13 18:32 -0500
+date: 2022-04-13 18:32 -0500
 categories: knitting
-permalink: /knitting/2021-04-13-Baby-Blanket-for-Violet/
+permalink: /knitting/2022-04-13-Baby-Blanket-for-Violet/
 ---
 My first baby blanket for a friend. [Pattern](https://www.ravelry.com/patterns/library/leafy-baby-blanket){:target="blank"}.
 
