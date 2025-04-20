@@ -4,6 +4,7 @@ _site
 .jekyll-metadata
 vendor
 Gemfile.lock
+deploy.sh
 
 # macOS specific files
 .DS_Store
