@@ -68,7 +68,7 @@ cat > "$post_filename" << EOF
 ---
 layout: single
 title: Daily Doodle for ${month_day_year}
-date: ${doodle_date} 18:32 -0500
+date: ${doodle_date} 06:00 -0500
 categories: daily-doodle
 permalink: /daily-doodle/${doodle_date}/
 ---
